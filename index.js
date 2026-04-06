@@ -12,13 +12,7 @@ bot.on("ready", () => {
 
   // Set status + activity
   bot.editStatus({
-    status: "idle",                    // ← This sets Do Not Disturb
-    afk: false,
-    activities: [{
-      name: "🌊 the sea",             // What the bot is "listening to"
-      type: 2,                        // 2 = Listening
-      // url: "https://twitch.tv/..." // only needed if type: 1 (Streaming)
-    }]
+    status: "idle",                    // ← This sets Do Not Distur
   });
 
   console.log("✅ Status successfully set to **Do Not Disturb (DND)** with activity");
