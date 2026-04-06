@@ -1,23 +1,27 @@
 const Eris = require("eris");
-const keep_alive = require('./keep_alive.js')
+const keep_alive = require('./keep_alive.js');
 
-// Replace TOKEN with your bot account's token
 const bot = new Eris(process.env.token);
 
 bot.on("error", (err) => {
-  console.error(err); // or your preferred logger
+  console.error(err);
 });
-
 
 bot.on("ready", () => {
-  console.log(`Logged in as ${bot.user.username}`);
+  console.log(`✅ Logged in as ${bot.user.username}#${bot.user.discriminator}`);
 
-  bot.setStatus("idle", {
-    name: "🌊 the sea",   // You can change this to whatever you want
-    type: 2,                   // 0 = Playing, 1 = Streaming, 2 = Listening, 3 = Watching, 5 = Competing
+  // Set status + activity
+  bot.editStatus({
+    status: "idle",                    // ← This sets Do Not Disturb
+    afk: false,
+    activities: [{
+      name: "🌊 the sea",             // What the bot is "listening to"
+      type: 2,                        // 2 = Listening
+      // url: "https://twitch.tv/..." // only needed if type: 1 (Streaming)
+    }]
   });
 
-  console.log("Status set to Do Not Disturb (DND)");
+  console.log("✅ Status successfully set to **Do Not Disturb (DND)** with activity");
 });
 
-bot.connect(); // Get the bot to connect to Discord
+bot.connect();
