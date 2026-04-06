@@ -12,7 +12,7 @@ bot.on("error", (err) => {
 bot.on("ready", () => {
   console.log(`Logged in as ${bot.user.username}`);
 
-  bot.editStatus("idle", {
+  bot.setStatus("idle", {
     name: "🌊 the sea",   // You can change this to whatever you want
     type: 2,                   // 0 = Playing, 1 = Streaming, 2 = Listening, 3 = Watching, 5 = Competing
   });
