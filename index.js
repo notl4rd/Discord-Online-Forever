@@ -11,11 +11,12 @@ bot.on("ready", () => {
   console.log(`✅ Logged in as ${bot.user.username}#${bot.user.discriminator}`);
 
   // Set status + activity
-  bot.editStatus({
-    status: "idle",                    // ← This sets Do Not Distur
+  bot.editStatus("idle", {
+    name: "Staying Online",
+    type: 0
   });
 
-  console.log("✅ Status successfully set to **Do Not Disturb (DND)** with activity");
+  console.log("✅ Status successfully set to idle with activity");
 });
 
 bot.connect();
