@@ -10,13 +10,10 @@ bot.on("error", (err) => {
 bot.on("ready", () => {
   console.log(`✅ Logged in as ${bot.user.username}#${bot.user.discriminator}`);
 
-  // Set status + activity
-  bot.editStatus("idle", {
-    name: "Staying Online",
-    type: 0
-  });
+  // Set status
+  bot.editStatus("idle");
 
-  console.log("✅ Status successfully set to idle with activity");
+  console.log("✅ Status successfully set to idle");
 });
 
 bot.connect();
